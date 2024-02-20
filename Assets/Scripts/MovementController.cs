@@ -39,18 +39,24 @@ public class MovementController : MonoBehaviour
             }
         }
         if(other.gameObject.CompareTag("Rail")) {
+            Debug.Log("Rail contact");
             isJumping = false;
+            rb.velocity = new Vector2(0, 0);
             if (angle == 0) {
-                rb.velocity = new Vector2(0, moveSpeed);
+                rb.velocity = new Vector2(moveSpeed, 0);
+                Debug.Log("moving");
             }
             if (angle == 90) {
-                rb.velocity = new Vector2(moveSpeed, 0);
+                rb.velocity = new Vector2(0, -moveSpeed);
+                Debug.Log("moving");
             }
             if (angle == 180) {
-                rb.velocity = new Vector2(0, -moveSpeed);
+                rb.velocity = new Vector2(-moveSpeed, 0);
+                Debug.Log("moving");
             }
             if (angle == 270) {
-                rb.velocity = new Vector2(-moveSpeed, 0);
+                rb.velocity = new Vector2(0, moveSpeed);
+                Debug.Log("moving");
             }
             
         }
