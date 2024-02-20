@@ -9,6 +9,7 @@ public class BarrierScript : MonoBehaviour
     public bool barrierA = true;
     public Transform player;
     public SwitchScript switchScript;
+    public SpriteRenderer opacity;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +35,11 @@ public class BarrierScript : MonoBehaviour
     {
         if (active)
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>(), false);
+            opacity.color = new Color(1f, 1f, 1f, 1f);
         }
         else
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>(), true);
+            opacity.color = new Color(1f, 1f, 1f, 0.5f);
         }
     }
 
@@ -62,6 +63,15 @@ public class BarrierScript : MonoBehaviour
         else
         {
             active = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.CompareTag("Player") && active)
+        {
+            //then you lose
         }
     }
 }
