@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviour
     private float angle = 0f;
     private float moveSpeed = 6f;
 
-    [SerializeField] private Rigidbody2d rb;
+    [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
