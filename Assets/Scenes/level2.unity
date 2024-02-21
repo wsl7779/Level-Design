@@ -1343,6 +1343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 387050431394538287, guid: ce4c951b6294de04eb8e5771808893a9, type: 3}
+      propertyPath: m_TagString
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 3167176784337538898, guid: ce4c951b6294de04eb8e5771808893a9, type: 3}
       propertyPath: m_Size.x
       value: 1.2

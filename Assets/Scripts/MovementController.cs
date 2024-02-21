@@ -28,55 +28,69 @@ public class MovementController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Corner") && isJumping == false) {
+        if (other.gameObject.CompareTag("Corner") && isJumping == false)
+        {
             Debug.Log(angle);
             isJumping = false;
             onCorner = true;
-            if (clockwise) {
-                if (angle != 270) {
+            if (clockwise)
+            {
+                if (angle != 270)
+                {
                     Debug.Log("reach");
                     angle += 90;
                 }
-                else {
+                else
+                {
                     angle = 0;
                 }
             }
-            else {
-                if (angle != 0) {
+            else
+            {
+                if (angle != 0)
+                {
                     angle -= 90;
                 }
-                else {
+                else
+                {
                     Debug.Log("reach");
                     angle = 270;
                 }
             }
         }
-        else if(other.gameObject.CompareTag("Rail")) {
+        else if (other.gameObject.CompareTag("Rail"))
+        {
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
             Debug.Log("Rail contact");
             isJumping = false;
             onCorner = false;
             //rb.velocity = new Vector2(0, 0);
-            if (angle == 0) {
+            if (angle == 0)
+            {
                 rb.velocity = new Vector2(moveSpeed, 0);
                 Debug.Log("moving right");
             }
-            else if (angle == 90) {
+            else if (angle == 90)
+            {
                 rb.velocity = new Vector2(0, -moveSpeed);
                 Debug.Log("moving down");
             }
-            else if (angle == 180) {
+            else if (angle == 180)
+            {
                 rb.velocity = new Vector2(-moveSpeed, 0);
                 Debug.Log("moving left");
             }
-            else if (angle == 270) {
+            else if (angle == 270)
+            {
                 rb.velocity = new Vector2(0, moveSpeed);
                 Debug.Log("moving up");
-            }  
-            if (clockwise) {
+            }
+            if (clockwise)
+            {
                 m_SpriteRenderer.color = Color.magenta;
             }
-            else {
+            else
+            {
                 m_SpriteRenderer.color = Color.white;
             }
         }
@@ -114,6 +128,18 @@ public class MovementController : MonoBehaviour
             else
             {
                 m_SpriteRenderer.color = Color.white;
+            }
+        }
+        else if (other.gameObject.CompareTag("Exit"))
+        {
+            Debug.LogWarning("you win");
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                SceneManager.LoadScene("level2");
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                SceneManager.LoadScene("Main Menu");
             }
         }
 
