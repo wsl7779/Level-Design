@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitScript : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ExitScript : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.LogWarning("you win");
-            //win
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
