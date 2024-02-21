@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    private bool clockwise = false;
-    private bool isJumping = false;
-    private float jumpHeight = 10f;
-    private float angle = 0f;
-    private float moveSpeed = 6f;
+    public bool clockwise = false;
+    public bool isJumping = false;
+    public float jumpHeight = 10f;
+    public float angle = 0f;
+    public float moveSpeed = 6f;
 
     [SerializeField] private Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +39,15 @@ public class MovementController : MonoBehaviour
                 }
             }
         }
+<<<<<<< Updated upstream
         if(other.gameObject.CompareTag("Rail")) {
+=======
+        else if(other.gameObject.CompareTag("Rail")) {
+            Debug.Log("Rail contact");
+>>>>>>> Stashed changes
             isJumping = false;
             if (angle == 0) {
+<<<<<<< Updated upstream
                 rb.velocity = new Vector2(0, moveSpeed);
             }
             if (angle == 90) {
@@ -51,6 +58,22 @@ public class MovementController : MonoBehaviour
             }
             if (angle == 270) {
                 rb.velocity = new Vector2(-moveSpeed, 0);
+=======
+                rb.velocity = new Vector2(moveSpeed, 0);
+                Debug.Log("should be moving right now");
+            }
+            else if (angle == 90) {
+                rb.velocity = new Vector2(0, -moveSpeed);
+                Debug.Log("should be moving down now");
+            }
+            else if (angle == 180) {
+                rb.velocity = new Vector2(-moveSpeed, 0);
+                Debug.Log("should be moving left now");
+            }
+            else if (angle == 270) {
+                rb.velocity = new Vector2(0, moveSpeed);
+                Debug.Log("should be movingup now");
+>>>>>>> Stashed changes
             }
             
         }
@@ -67,20 +90,31 @@ public class MovementController : MonoBehaviour
             moveSpeed = -moveSpeed;
             
             if (angle == 0) {
+<<<<<<< Updated upstream
                 rb.velocity = new Vector2(0, jumpHeight);
                 angle = 180f;
             }
             if (angle == 90) {
+=======
+                Debug.Log("should go up");
+                rb.velocity = new Vector2(0, jumpHeight);
+                angle = 180f;
+            }
+            else if (angle == 90) {
+                Debug.Log("should go right");
+>>>>>>> Stashed changes
                 rb.velocity = new Vector2(jumpHeight, 0);
                 angle = 270f;
             }
-            if (angle == 180) {
+            else if (angle == 180) {
+                Debug.Log("should go down");
                 rb.velocity = new Vector2(0, -jumpHeight);
                 angle = 0f;
             }
-            if (angle == 270) {
+            else if (angle == 270) {
+                Debug.Log("should go left");
                 rb.velocity = new Vector2(-jumpHeight, 0);
-                angle = 90;
+                angle = 90f;
             }
         }
     }
