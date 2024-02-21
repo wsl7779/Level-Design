@@ -76,7 +76,7 @@ public class MovementController : MonoBehaviour
                 Debug.Log("moving");
             }  
             if (clockwise) {
-            m_SpriteRenderer.color = Color.red;
+                m_SpriteRenderer.color = Color.magenta;
             }
             else {
                 m_SpriteRenderer.color = Color.white;
