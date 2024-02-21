@@ -14,13 +14,14 @@ public class MovementController : MonoBehaviour
     Vector3 initPos, initVel;
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Vector3 initialVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         initPos = transform.position;
+        rb.velocity = initialVelocity;
         initVel = rb.velocity;
-        Debug.Log(angle);
        
     }
 
@@ -30,58 +31,58 @@ public class MovementController : MonoBehaviour
         rb.velocity = initVel;
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Corner") && isJumping == false) {
-            Debug.Log(angle);
-            isJumping = false;
-            onCorner = true;
-            if (clockwise) {
-                if (angle != 270) {
-                    Debug.Log("reach");
-                    angle += 90;
-                }
-                else {
-                    angle = 0;
-                }
-            }
-            else {
-                if (angle != 0) {
-                    angle -= 90;
-                }
-                else {
-                    Debug.Log("reach");
-                    angle = 270;
-                }
-            }
-        }
-        else if(other.gameObject.CompareTag("Rail")) {
-            m_SpriteRenderer = GetComponent<SpriteRenderer>();
-            Debug.Log("Rail contact");
-            isJumping = false;
-            onCorner = false;
-            //rb.velocity = new Vector2(0, 0);
-            if (angle == 0) {
-                rb.velocity = new Vector2(moveSpeed, 0);
-                Debug.Log("moving");
-            }
-            else if (angle == 90) {
-                rb.velocity = new Vector2(0, -moveSpeed);
-                Debug.Log("moving test");
-            }
-            else if (angle == 180) {
-                rb.velocity = new Vector2(-moveSpeed, 0);
-                Debug.Log("moving");
-            }
-            else if (angle == 270) {
-                rb.velocity = new Vector2(0, moveSpeed);
-                Debug.Log("moving");
-            }  
-            if (clockwise) {
-                m_SpriteRenderer.color = Color.magenta;
-            }
-            else {
-                m_SpriteRenderer.color = Color.white;
-            }
-        }
+        //if(other.gameObject.CompareTag("Corner") && isJumping == false) {
+        //    Debug.Log(angle);
+        //    isJumping = false;
+        //    onCorner = true;
+        //    if (clockwise) {
+        //        if (angle != 270) {
+        //            Debug.Log("reach");
+        //            angle += 90;
+        //        }
+        //        else {
+        //            angle = 0;
+        //        }
+        //    }
+        //    else {
+        //        if (angle != 0) {
+        //            angle -= 90;
+        //        }
+        //        else {
+        //            Debug.Log("reach");
+        //            angle = 270;
+        //        }
+        //    }
+        //}
+        //if(other.gameObject.CompareTag("Rail")) {
+        //    m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        //    Debug.Log("Rail contact");
+        //    isJumping = false;
+        //    onCorner = false;
+        //    //rb.velocity = new Vector2(0, 0);
+        //    if (angle == 0) {
+        //        rb.velocity = new Vector2(moveSpeed, 0);
+        //        Debug.Log("moving");
+        //    }
+        //    else if (angle == 90) {
+        //        rb.velocity = new Vector2(0, -moveSpeed);
+        //        Debug.Log("moving test");
+        //    }
+        //    else if (angle == 180) {
+        //        rb.velocity = new Vector2(-moveSpeed, 0);
+        //        Debug.Log("moving");
+        //    }
+        //    else if (angle == 270) {
+        //        rb.velocity = new Vector2(0, moveSpeed);
+        //        Debug.Log("moving");
+        //    }  
+        //    if (clockwise) {
+        //        m_SpriteRenderer.color = Color.magenta;
+        //    }
+        //    else {
+        //        m_SpriteRenderer.color = Color.white;
+        //    }
+        //}
         
     }
 
@@ -89,30 +90,30 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         //jumping
-        if (Input.GetKeyDown("space") && !isJumping && !onCorner)
-        {
-            isJumping = true;
-            clockwise = !clockwise;
-            moveSpeed = -moveSpeed;
-            Debug.Log("jumping");
+        //if (Input.GetButtonDown("Jump") && !isJumping && !onCorner)
+        //{
+        //    isJumping = true;
+        //    clockwise = !clockwise;
+        //    moveSpeed = -moveSpeed;
+        //    Debug.Log("jumping");
 
-            if (angle == 0) {
-                rb.velocity = new Vector2(0, jumpHeight);
-                angle = 180f;
-            }
-            else if (angle == 90) {
-                rb.velocity = new Vector2(jumpHeight, 0);
-                angle = 270f;
-            }
-            else if (angle == 180) {
-                rb.velocity = new Vector2(0, -jumpHeight);
-                angle = 0f;
-            }
-            else if (angle == 270) {
-                rb.velocity = new Vector2(-jumpHeight, 0);
-                angle = 90;
-            }
+        //    if (angle == 0) {
+        //        rb.velocity = new Vector2(0, jumpHeight);
+        //        angle = 180f;
+        //    }
+        //    else if (angle == 90) {
+        //        rb.velocity = new Vector2(jumpHeight, 0);
+        //        angle = 270f;
+        //    }
+        //    else if (angle == 180) {
+        //        rb.velocity = new Vector2(0, -jumpHeight);
+        //        angle = 0f;
+        //    }
+        //    else if (angle == 270) {
+        //        rb.velocity = new Vector2(-jumpHeight, 0);
+        //        angle = 90;
+        //    }
             
-        }
+        //}
     }
 }
