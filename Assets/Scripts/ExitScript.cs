@@ -12,7 +12,16 @@ public class ExitScript : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.LogWarning("you win");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.LogWarning(SceneManager.GetActiveScene().buildIndex);
+            Debug.LogWarning(SceneManager.GetActiveScene().buildIndex + 1);
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                SceneManager.LoadScene("level2");
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
         }
     }
 }

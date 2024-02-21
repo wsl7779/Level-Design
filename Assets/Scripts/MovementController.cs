@@ -13,7 +13,6 @@ public class MovementController : MonoBehaviour
     private float moveSpeed = 6f;
     private SpriteRenderer m_SpriteRenderer;
     Vector3 initPos, initVel;
-    private string currentScene;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -25,12 +24,11 @@ public class MovementController : MonoBehaviour
         initPos = transform.position;
         initVel = rb.velocity;
         Debug.Log(angle);
-        currentScene = SceneManager.GetActiveScene().name;
     }
 
     public void Reset()
     {
-        SceneManager.LoadScene(currentScene);
+        //SceneManager.LoadScene(GetActiveScene().buildIndex);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Corner") && isJumping == false) {

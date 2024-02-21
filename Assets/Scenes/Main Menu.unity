@@ -742,7 +742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zero Gravity
+  m_text: Orbitalia - Zero Gravity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25ac8a2b707b5448ea4de6596115693e, type: 2}
   m_sharedMaterial: {fileID: 9138581083262022269, guid: 25ac8a2b707b5448ea4de6596115693e, type: 2}
