@@ -599,6 +599,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4306741945076765511, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7375401901318659604, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_Color.b
       value: 0.45490196
@@ -788,6 +792,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4306741945076765511, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7375401901318659604, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_Color.b
       value: 0.45490196
@@ -951,6 +959,10 @@ PrefabInstance:
     - target: {fileID: 3836400891427926927, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306741945076765511, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7375401901318659604, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_Color.b
@@ -1154,6 +1166,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4306741945076765511, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7375401901318659604, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_Color.b
       value: 0.45490196
@@ -1262,6 +1278,10 @@ PrefabInstance:
     - target: {fileID: 3836400891427926927, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306741945076765511, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7375401901318659604, guid: f6cf993efcecfe54e8aca089aaee5f84, type: 3}
       propertyPath: m_Color.b
