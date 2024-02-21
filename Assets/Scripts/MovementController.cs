@@ -15,11 +15,12 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(angle);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Corner")) {
+            Debug.Log(angle);
             isJumping = false;
             if (clockwise) {
                 if (angle != 270) {
@@ -41,7 +42,7 @@ public class MovementController : MonoBehaviour
         if(other.gameObject.CompareTag("Rail")) {
             Debug.Log("Rail contact");
             isJumping = false;
-            rb.velocity = new Vector2(0, 0);
+            //rb.velocity = new Vector2(0, 0);
             if (angle == 0) {
                 rb.velocity = new Vector2(moveSpeed, 0);
                 Debug.Log("moving");
@@ -71,13 +72,15 @@ public class MovementController : MonoBehaviour
             isJumping = true;
             clockwise = !clockwise;
             moveSpeed = -moveSpeed;
-            
+            Debug.Log("jumping");
+            Debug.Log(angle);
+
             if (angle == 0) {
-                rb.velocity = new Vector2(0, jumpHeight);
+                rb.velocity = new Vector2(0, -jumpHeight);
                 angle = 180f;
             }
             if (angle == 90) {
-                rb.velocity = new Vector2(jumpHeight, 0);
+                rb.velocity = new Vector2(10, 0);
                 angle = 270f;
             }
             if (angle == 180) {
