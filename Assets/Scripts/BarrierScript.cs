@@ -22,15 +22,18 @@ public class BarrierScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (barrierA)
+        if (switchScript != null)
         {
-            CheckSwitchA();
+            if (barrierA)
+            {
+                CheckSwitchA();
+            }
+            else
+            {
+                CheckSwitchB();
+            }
+            ToggleActive();
         }
-        else
-        {
-            CheckSwitchB();
-        }
-        ToggleActive();
     }
 
     void ToggleActive()
