@@ -23,15 +23,21 @@ public class RailMover : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(5, 0, 0);
+            // collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(5, 0, 0);
+            // collision.transform.GetComponent<Rigidbody2D>().position += (Vector2)(gameObject.transform.rotation * new Vector3(1f, 0, 0));
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        endpoint = collision.transform.position;
-        if (collision.transform.tag == "Player" && Input.GetButtonDown("Jump"))
+        if (collision.transform.tag != "Player") { return; }
+        if (Input.GetButtonDown("Jump"))
         {
-            collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 1, 0);
+            collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 5.0f, 0);
+        } else
+        {
+            endpoint = collision.transform.position;
+            // collision.transform.GetComponent<Rigidbody2D>().position += (Vector2)(gameObject.transform.rotation * new Vector3(0.1f, 0, 0));
         }
     }
 
@@ -40,11 +46,11 @@ public class RailMover : MonoBehaviour
         if (collision.transform.tag != "Player") { return; }
         if (Input.GetButtonDown("Jump"))
         {
-            collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 2.5f, 0);
+            // collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 2.5f, 0);
         } else
         {
-            collision.transform.position = endpoint;
-            collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 5, 0);
+            // collision.transform.position = endpoint;
+            // collision.transform.GetComponent<Rigidbody2D>().velocity = gameObject.transform.rotation * new Vector3(0, 5, 0);
         }
     }
 }
