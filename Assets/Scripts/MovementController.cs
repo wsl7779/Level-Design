@@ -19,11 +19,12 @@ public class MovementController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Corner")) {
+        if(other.gameObject.CompareTag("Corner") && isJumping == false) {
             Debug.Log(angle);
             isJumping = false;
             if (clockwise) {
                 if (angle != 270) {
+                    Debug.Log("reach");
                     angle += 90;
                 }
                 else {
@@ -32,9 +33,11 @@ public class MovementController : MonoBehaviour
             }
             else {
                 if (angle != 0) {
+                    Debug.Log(angle);
                     angle -= 90;
                 }
                 else {
+                    Debug.Log("reach");
                     angle = 270;
                 }
             }
@@ -44,18 +47,18 @@ public class MovementController : MonoBehaviour
             isJumping = false;
             //rb.velocity = new Vector2(0, 0);
             if (angle == 0) {
-                rb.velocity = new Vector2(-moveSpeed, 0);
+                rb.velocity = new Vector2(moveSpeed, 0);
                 Debug.Log("moving");
             }
-            if (angle == 90) {
+            else if (angle == 90) {
                 rb.velocity = new Vector2(0, -moveSpeed);
-                Debug.Log("moving");
+                Debug.Log("moving test");
             }
-            if (angle == 180) {
+            else if (angle == 180) {
                 rb.velocity = new Vector2(-moveSpeed, 0);
                 Debug.Log("moving");
             }
-            if (angle == 270) {
+            else if (angle == 270) {
                 rb.velocity = new Vector2(0, moveSpeed);
                 Debug.Log("moving");
             }
@@ -76,18 +79,18 @@ public class MovementController : MonoBehaviour
             Debug.Log(angle);
 
             if (angle == 0) {
-                rb.velocity = new Vector2(0, -jumpHeight);
+                rb.velocity = new Vector2(0, jumpHeight);
                 angle = 180f;
             }
-            if (angle == 90) {
-                rb.velocity = new Vector2(10, 0);
+            else if (angle == 90) {
+                rb.velocity = new Vector2(jumpHeight, 0);
                 angle = 270f;
             }
-            if (angle == 180) {
+            else if (angle == 180) {
                 rb.velocity = new Vector2(0, -jumpHeight);
                 angle = 0f;
             }
-            if (angle == 270) {
+            else if (angle == 270) {
                 rb.velocity = new Vector2(-jumpHeight, 0);
                 angle = 90;
             }
