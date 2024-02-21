@@ -178,6 +178,10 @@ PrefabInstance:
       value: Rail (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -191,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597274140427116279, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.500205
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5597274140427116279, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_LocalPosition.y
@@ -284,7 +288,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924568939802252493, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalScale.x
@@ -296,11 +300,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4998
+      value: -0.49922
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -140.2
+      value: -140.107
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -394,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 1541460258452691304, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_Name
       value: Rail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_IsTrigger
@@ -502,7 +510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924568939802252493, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalScale.x
@@ -611,7 +619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924568939802252493, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalScale.x
@@ -723,6 +731,10 @@ PrefabInstance:
       value: Rail (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806453471835277744, guid: ae746083408264ffb84743b43d9f0990, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -829,7 +841,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924568939802252493, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2152427710966509443, guid: fdb9c2126c6574da6a128c455e2c169e, type: 3}
       propertyPath: m_LocalScale.x
