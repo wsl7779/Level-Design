@@ -12,7 +12,6 @@ public class MovementController : MonoBehaviour
     private float angle = 0f;
     private float moveSpeed = 6f;
     private SpriteRenderer m_SpriteRenderer;
-    Vector3 initPos, initVel;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -21,14 +20,12 @@ public class MovementController : MonoBehaviour
     {
 
         rb.velocity = new Vector2(moveSpeed, 0);
-        initPos = transform.position;
-        initVel = rb.velocity;
         Debug.Log(angle);
     }
 
     public void Reset()
     {
-        //SceneManager.LoadScene(GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Corner") && isJumping == false) {
@@ -62,19 +59,19 @@ public class MovementController : MonoBehaviour
             //rb.velocity = new Vector2(0, 0);
             if (angle == 0) {
                 rb.velocity = new Vector2(moveSpeed, 0);
-                Debug.Log("moving");
+                Debug.Log("moving right");
             }
             else if (angle == 90) {
                 rb.velocity = new Vector2(0, -moveSpeed);
-                Debug.Log("moving test");
+                Debug.Log("moving down");
             }
             else if (angle == 180) {
                 rb.velocity = new Vector2(-moveSpeed, 0);
-                Debug.Log("moving");
+                Debug.Log("moving left");
             }
             else if (angle == 270) {
                 rb.velocity = new Vector2(0, moveSpeed);
-                Debug.Log("moving");
+                Debug.Log("moving up");
             }  
             if (clockwise) {
                 m_SpriteRenderer.color = Color.magenta;
@@ -83,12 +80,49 @@ public class MovementController : MonoBehaviour
                 m_SpriteRenderer.color = Color.white;
             }
         }
-        
+        else if (other.gameObject.CompareTag("Rail2"))
+        {
+            m_SpriteRenderer = GetComponent<SpriteRenderer>();
+            Debug.Log("Rail2 contact");
+            isJumping = false;
+            onCorner = false;
+            //rb.velocity = new Vector2(0, 0);
+            if (angle == 0)
+            {
+                rb.velocity = new Vector2(-moveSpeed, 0);
+                Debug.Log("moving right");
+            }
+            else if (angle == 90)
+            {
+                rb.velocity = new Vector2(0, moveSpeed);
+                Debug.Log("moving down");
+            }
+            else if (angle == 180)
+            {
+                rb.velocity = new Vector2(moveSpeed, 0);
+                Debug.Log("moving left");
+            }
+            else if (angle == 270)
+            {
+                rb.velocity = new Vector2(0, -moveSpeed);
+                Debug.Log("moving up");
+            }
+            if (clockwise)
+            {
+                m_SpriteRenderer.color = Color.magenta;
+            }
+            else
+            {
+                m_SpriteRenderer.color = Color.white;
+            }
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //jumping
         if (Input.GetKeyDown("space") && !isJumping && !onCorner)
         {

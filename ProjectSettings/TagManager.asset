@@ -10,6 +10,7 @@ TagManager:
   - Switch
   - Exit
   - Enemy
+  - Rail2
   layers:
   - Default
   - TransparentFX
