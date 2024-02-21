@@ -9,15 +9,23 @@ public class MovementController : MonoBehaviour
     private float jumpHeight = 10f;
     private float angle = 0f;
     private float moveSpeed = 6f;
+    Vector3 initPos, initVel;
 
     [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        initPos = transform.position;
+        initVel = rb.velocity;
         Debug.Log(angle);
     }
 
+    public void Reset()
+    {
+        transform.position = initPos;
+        rb.velocity = initVel;
+    }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Corner") && isJumping == false) {
             Debug.Log(angle);
@@ -63,6 +71,10 @@ public class MovementController : MonoBehaviour
                 Debug.Log("moving");
             }
             
+        }
+        if (other.gameObject.name == "Laser")
+        {
+            transform.position = initPos;
         }
     }
 

@@ -10,11 +10,13 @@ public class BarrierScript : MonoBehaviour
     public Transform player;
     public SwitchScript switchScript;
     public SpriteRenderer opacity;
+    GameObject collisionHandler;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<MovementController>().transform;
+        collisionHandler = gameObject.transform.Find("CollisionHandler").gameObject;
     }
 
     // Update is called once per frame
@@ -36,10 +38,13 @@ public class BarrierScript : MonoBehaviour
         if (active)
         {
             opacity.color = new Color(1f, 1f, 1f, 1f);
+            collisionHandler.SetActive(true);
+
         }
         else
         {
             opacity.color = new Color(1f, 1f, 1f, 0.5f);
+            collisionHandler.SetActive(false);
         }
     }
 
