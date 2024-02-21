@@ -2084,6 +2084,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 919861891}
     m_Modifications:
+    - target: {fileID: -9026614645355933501, guid: a95d96f2de2bc434390af59ab9c9c4a2, type: 3}
+      propertyPath: jumpSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ac3324e20a5f4ab995f1e4729e282ac, type: 3}
     - target: {fileID: -1862509854631417669, guid: a95d96f2de2bc434390af59ab9c9c4a2, type: 3}
       propertyPath: m_Radius
       value: 0.05
