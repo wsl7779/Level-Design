@@ -8,6 +8,7 @@ TagManager:
   - Corner
   - Barrier
   - Switch
+  - Exit
   layers:
   - Default
   - TransparentFX
