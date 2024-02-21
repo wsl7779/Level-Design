@@ -14,6 +14,9 @@ public class MovementController : MonoBehaviour
     private SpriteRenderer m_SpriteRenderer;
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private AudioClip jumpSoundClip;
+
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class MovementController : MonoBehaviour
 
         rb.velocity = new Vector2(moveSpeed, 0);
         Debug.Log(angle);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Reset()
@@ -145,6 +149,12 @@ public class MovementController : MonoBehaviour
 
     }
 
+    private void jumpSoundPlay() {
+        audioSource.clip = jumpSoundClip;
+        audioSource.Play();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -156,6 +166,7 @@ public class MovementController : MonoBehaviour
             clockwise = !clockwise;
             moveSpeed = -moveSpeed;
             Debug.Log("jumping");
+            jumpSoundPlay();
 
             if (angle == 0) {
                 rb.velocity = new Vector2(0, jumpHeight);
